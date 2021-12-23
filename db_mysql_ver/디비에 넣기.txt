@@ -1,0 +1,198 @@
+
+insert into tourist (ID, pwd, phone, birth, hope_p, hope_t)
+select 'B689037',	'1234',	'010-4179-4469',	19980906,	'Seogwipo-si',	'Mount' from dual
+union all
+select 'B793005',	'5684',	'010-1234-5678',	19970805,	'Seogwipo-si',	'Museum' from dual
+union all
+select 'B689041',	'abc123',	'010-8765-4321',	19960105,	'Jeju-si',	'Forest' from dual
+union all
+select 'B884047',	'bfd5712',	'010-4589-3054',	19980320,	'Jeju-si',	'Forest' from dual;
+
+insert into attraction (num, name, category, stat)
+select 1, 'Seongsan Ilchulbong Tuff Cone', 'Mount', 'Seogwipo-si' from dual
+union all
+select 2, 'TeddyBearMuseum', 'Museum', 'Seogwipo-si' from dual
+union all
+select 3, 'Yongyeon Valley', 'Valley', 'Jeju-si' from dual
+union all
+select 4, 'DoryeonTangerineForest', 'Forest', 'Jeju-si' from dual;
+
+
+insert into inf (address, picture, inform, tel, num)
+select 'Seongsan-ri 1, Seongsan-eup', '1245', 'Wow!', '064-783-0959', 1 from dual
+union all
+select 'Jungmungwangwang-ro 110beon-gil', '2806', 'So cute', '064-738-7601', 2 from dual
+union all
+select 'YongdamIl-dong Hando Gigil 35', '2570', 'Beautiful!', '064-711-4508', 3 from dual
+union all
+select 'Doryeonnam 3-gil 81', '3804', 'So many photo zone', '064-752-7733', 4 from dual;
+
+
+
+insert into review (num, ID, text, star, time)
+select 1, 'B689037', '생각보다 높아서 힘들었다', 3, 12040559 from dual
+union all
+select 2, 'B689037', '귀여운 곰돌이가 많았다.', 5, 12050328 from dual
+union all
+select 2, 'B793005', '별다른 이벤트가 없어서 지루했다', 2, 11250723 from dual
+union all
+select 3, 'B689041', '계곡물이 꺠끗했다', 5, 8061457 from dual
+union all
+select 4, 'B884047', '사진을 많이 찍을 수 있었다', 5,8080810 from dual;
+
+insert into seasons (month, season)
+select 1, 'winter' from dual
+union all
+select 2, 'winter' from dual
+union all
+select 3, 'spring' from dual
+union all
+select 4, 'spring' from dual
+union all
+select 5, 'spring' from dual
+union all
+select 6, 'summer' from dual
+union all
+select 7, 'summer' from dual
+union all
+select 8, 'summer' from dual
+union all
+select 9, 'fall' from dual
+union all
+select 10, 'fall' from dual
+union all
+select 11, 'fall' from dual
+union all
+select 12, 'winter' from dual;
+
+insert into seasons_attraction (num, month, temperature, advice, recommend)
+select 1, 1, 5.6, 'So cold!', 0 from dual
+union all
+select 1, 2, 11.2, 'So cold!', 0 from dual
+union all
+select 1, 3, 12, 'So cold!', 1 from dual
+union all
+select 1, 4, 13.4, 'Good!', 0 from dual
+union all
+select 1, 5, 17.3, 'Good!!', 1 from dual
+union all
+select 1, 6, 21.8, 'Good!!', 0 from dual
+union all
+select 1, 7, 24.2, 'Hot!', 1 from dual
+union all
+select 1, 8, 28.7, 'Hot!', 1 from dual
+union all
+select 1, 9, 23.5, 'Beautiful!', 0 from dual
+union all
+select 1, 10, 18.3, 'Cool!', 0 from dual
+union all
+select 1, 11, 12.4, 'Cool!', 1 from dual
+union all
+select 1, 12, 7.8, 'So cold!', 0 from dual
+union all
+select 2, 1, 5.6, 'So cold!', 0 from dual
+union all
+select 2, 2, 11.2, 'So cold!', 0 from dual
+union all
+select 2, 3, 12, 'So cold!', 1 from dual
+union all
+select 2, 4, 13.4, 'Good!', 0 from dual
+union all
+select 2, 5, 17.3, 'Good!!', 1 from dual
+union all
+select 2, 6, 21.8, 'Good!!', 0 from dual
+union all
+select 2, 7, 24.2, 'Hot!', 1 from dual
+union all
+select 2, 8, 28.7, 'Hot!', 1 from dual
+union all
+select 2, 9, 23.5, 'Beautiful!', 0 from dual
+union all
+select 2, 10, 18.3, 'Cool!', 0 from dual
+union all
+select 2, 11, 12.4, 'Cool!', 1 from dual
+union all
+select 2, 12, 7.8, 'So cold!', 0 from dual
+union all
+select 3, 1, 5.6, 'So cold!', 0 from dual
+union all
+select 3, 2, 11.2, 'So cold!', 0 from dual
+union all
+select 3, 3, 12, 'So cold!', 1 from dual
+union all
+select 3, 4, 13.4, 'Good!', 0 from dual
+union all
+select 3, 5, 17.3, 'Good!!', 1 from dual
+union all
+select 3, 6, 21.8, 'Good!!', 0 from dual
+union all
+select 3, 7, 24.2, 'Hot!', 1 from dual
+union all
+select 3, 8, 28.7, 'Hot!', 1 from dual
+union all
+select 3, 9, 23.5, 'Beautiful!', 0 from dual
+union all
+select 3, 10, 18.3, 'Cool!', 0 from dual
+union all
+select 3, 11, 12.4, 'Cool!', 1 from dual
+union all
+select 3, 12, 7.8, 'So cold!', 0 from dual
+union all
+select 4, 1, 5.6, 'So cold!', 0 from dual
+union all
+select 4, 2, 11.2, 'So cold!', 0 from dual
+union all
+select 4, 3, 12, 'So cold!', 1 from dual
+union all
+select 4, 4, 13.4, 'Good!', 0 from dual
+union all
+select 4, 5, 17.3, 'Good!!', 1 from dual
+union all
+select 4, 6, 21.8, 'Good!!', 0 from dual
+union all
+select 4, 7, 24.2, 'Hot!', 1 from dual
+union all
+select 4, 8, 28.7, 'Hot!', 1 from dual
+union all
+select 4, 9, 23.5, 'Beautiful!', 0 from dual
+union all
+select 4, 10, 18.3, 'Cool!', 0 from dual
+union all
+select 4, 11, 12.4, 'Cool!', 1 from dual
+union all
+select 4, 12, 7.8, 'So cold!', 0 from dual;
+
+insert into price1 (age, price, address)
+select 'adult', 5000, 'Seongsan-ri 1, Seongsan-eup' from dual
+union all
+select 'kid', 2500, 'Seongsan-ri 1, Seongsan-eup' from dual
+union all
+select 'group', 4000, 'Seongsan-ri 1, Seongsan-eup' from dual
+union all
+select 'youth', 2500, 'Seongsan-ri 1, Seongsan-eup' from dual
+union all
+select 'soldier', 2500, 'Seongsan-ri 1, Seongsan-eup' from dual;
+
+insert into price2 (age, price, address)
+select 'adult', 10000 ,  'Jungmungwangwang-ro 110beon-gil' from dual
+union all
+select 'disabled',  8000,  'Jungmungwangwang-ro 110beon-gil' from dual
+union all
+select 'youth',  9000,  'Jungmungwangwang-ro 110beon-gil' from dual
+union all
+select 'kid', 8000 ,  'Jungmungwangwang-ro 110beon-gil' from dual
+union all
+select 'under 36 months old', 0 ,  'Jungmungwangwang-ro 110beon-gil' from dual;
+
+insert into price3 (age, price, address)
+select 'adult',  0, 'YongdamIl-dong Hando Gigil 35' from dual
+union all
+select 'kid',  0, 'YongdamIl-dong Hando Gigil 35' from dual;
+
+insert into price4 (age, price, address)
+select 'basic', 7000, 'Doryeonnam 3-gil 81' from dual
+union all
+select 'entrance_tangerine 1KG', 10500 , 'Doryeonnam 3-gil 81' from dual
+union all
+select 'entrance_tangerine 2KG', 13000 , 'Doryeonnam 3-gil 81' from dual;	
+

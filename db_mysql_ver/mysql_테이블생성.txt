@@ -1,0 +1,86 @@
+CREATE TABLE tourist (
+ID	VARCHAR(10) NOT NULL,
+pwd	VARCHAR(10),
+phone	VARCHAR(15),
+birth	MEDIUMINT(8),
+hope_p	VARCHAR(30),
+hope_t	VARCHAR(15),
+CONSTRAINT tourist_pk PRIMARY KEY(ID));
+
+
+CREATE TABLE attraction (
+num      SMALLINT NOT NULL,
+NAME	VARCHAR(50),
+category	VARCHAR(30),
+stat	VARCHAR(15),
+CONSTRAINT attraction_pk  PRIMARY KEY(num));
+
+
+CREATE TABLE review (
+num      SMALLINT NOT NULL,
+ID	VARCHAR(10) NOT NULL,
+TEXT	VARCHAR(80),
+star	TINYINT,
+TIME	MEDIUMINT,
+CONSTRAINT review_pk PRIMARY KEY(num,ID),
+CONSTRAINT review_ID_fk FOREIGN KEY(ID) REFERENCES tourist(ID),
+CONSTRAINT review_num_fk FOREIGN KEY(num) REFERENCES attraction(num));
+
+
+CREATE TABLE seasons (
+MONTH	TINYINT	 NOT NULL,
+season	VARCHAR(6),
+CONSTRAINT seasons_pk PRIMARY KEY(MONTH));
+
+
+CREATE TABLE seasons_attraction (
+num      SMALLINT NOT NULL,
+MONTH	TINYINT	 NOT NULL,
+temperature	DOUBLE,
+advice		VARCHAR(80),
+recommend	TINYINT,
+CONSTRAINT seasons_attraction_pk PRIMARY KEY(num,MONTH),
+CONSTRAINT seasons_attraction_num_fk FOREIGN KEY(num) REFERENCES attraction (num),
+CONSTRAINT seasons_attraction_month_fk FOREIGN KEY(MONTH) REFERENCES seasons (MONTH));
+
+
+CREATE TABLE inf (
+address		VARCHAR(60) NOT NULL,
+picture		VARCHAR(40),
+inform		VARCHAR(80),
+tel		VARCHAR(13),
+num      SMALLINT NOT NULL,
+CONSTRAINT inf_pk PRIMARY KEY(address),
+CONSTRAINT inf_num_fk FOREIGN KEY(num) REFERENCES attraction(num));
+
+
+CREATE TABLE price1 (
+age	VARCHAR(10)	 NOT NULL,
+price	MEDIUMINT,
+address	VARCHAR(60) NOT NULL,
+CONSTRAINT price1_pk PRIMARY KEY(age),
+CONSTRAINT price1_address_fk FOREIGN KEY(address) REFERENCES inf (address));
+
+
+CREATE TABLE price2 (
+age	VARCHAR(20)	 NOT NULL,
+price	MEDIUMINT,
+address	VARCHAR(60) NOT NULL,
+CONSTRAINT price2_pk PRIMARY KEY(age),
+CONSTRAINT price2_address_fk FOREIGN KEY(address) REFERENCES inf (address));
+
+
+CREATE TABLE price3 (
+age	VARCHAR(10)	 NOT NULL,
+price	MEDIUMINT,
+address	VARCHAR(60) NOT NULL,
+CONSTRAINT price3_pk PRIMARY KEY(age),
+CONSTRAINT price3_address_fk FOREIGN KEY(address) REFERENCES inf (address));
+
+
+CREATE TABLE price4 (
+age	VARCHAR(25)	 NOT NULL,
+price	MEDIUMINT,
+address	VARCHAR(60) NOT NULL,
+CONSTRAINT price4_pk PRIMARY KEY(age),
+CONSTRAINT price4_address_fk FOREIGN KEY(address) REFERENCES inf (address));
